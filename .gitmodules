@@ -1,0 +1,7 @@
+[submodule "src/internal"]
+	path = src/internal
+	url = https://github.com/MultimediaExtensibleGit/Runtime.git
+	branch = master
+[submodule "src/runtime"]
+	path = src/runtime
+	url = https://github.com/MultimediaExtensibleGit/Runtime.git

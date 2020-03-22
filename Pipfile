@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+pytest = "*"
+
+[packages]
+gitpython = "*"
+kivy = "*"
+"kivy-deps.glew" = "*"
+"kivy-deps.sdl2" = "*"
+pillow = "*"
+pygit2 = "*"
+pyinstaller = "*"
+pypiwin32 = { version = "*", os_name = "== 'nt'" }
+python-dateutil = "*"
+requests = "*"
