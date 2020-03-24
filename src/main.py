@@ -30,7 +30,7 @@ import sys
 sys.path.insert((2, 1)[os.path.isdir(sys.path[0])], sys.path[(1, 0)[os.path.isdir(sys.path[0])]] + os.sep + 'runtime')
 
 # Import MEG runtime
-from meg_runtime import Config, PluginManager
+from meg_runtime import Config, PluginManager, UIManager
 
 # MEG client application
 class MEGApp(App):
@@ -71,7 +71,7 @@ class MEGApp(App):
         # Set the application title
         self.title = 'Multimedia Extensible Git'
         # Build the UI
-        return Label(text='Multimedia Extensible Git')
+        return UIManager()
 
 # Run MEG client application when executed directly
 if __name__ == '__main__':
