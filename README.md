@@ -18,7 +18,7 @@
 
 * Update the runtime submodule:
 
-  `git submodule update --init src/internal`
+  `git submodule update --init src/runtime`
 
 ## Build
 
