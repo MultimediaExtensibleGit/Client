@@ -71,7 +71,7 @@ class MEGApp(App):
         # Set the application title
         self.title = 'Multimedia Extensible Git'
         # Build the UI
-        return UIManager()
+        return UIManager.get_instance()
 
 # Run MEG client application when executed directly
 if __name__ == '__main__':
