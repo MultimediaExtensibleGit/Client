@@ -8,7 +8,6 @@ flake8 = "*"
 pytest = "*"
 
 [packages]
-gitpython = "*"
 kivy = "*"
 "kivy-deps.glew" = "*"
 "kivy-deps.sdl2" = "*"

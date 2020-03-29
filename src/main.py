@@ -46,7 +46,7 @@ class MEGApp(App):
         # Log debug information about home directory
         Logger.debug('MEG: Home <' + Config.get('path/home') + '>')
         # Load configuration
-        Config.load('$(path/config)')
+        Config.load()
         # Log debug information about cache and plugin directories
         Logger.debug('MEG: Cache <' + Config.get('path/cache') + '>')
         Logger.debug('MEG: Plugins <' + Config.get('path/plugins') + '>')
