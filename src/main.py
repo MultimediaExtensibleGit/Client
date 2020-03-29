@@ -23,14 +23,9 @@ from kivy.app import App
 from kivy.logger import Logger
 from kivy.uix.label import Label
 
-# Setup internal MEG runtime path(s)
-import sys
-# The first path may be the Kivy library zip so need to
-#  check and use the second path instead if that is the case
-sys.path.insert((2, 1)[os.path.isdir(sys.path[0])], sys.path[(1, 0)[os.path.isdir(sys.path[0])]] + os.sep + 'runtime')
-
 # Import MEG runtime
 from meg_runtime import Config, PluginManager
+
 
 # MEG client application
 class MEGApp(App):
@@ -72,6 +67,7 @@ class MEGApp(App):
         self.title = 'Multimedia Extensible Git'
         # Build the UI
         return Label(text='Multimedia Extensible Git')
+
 
 # Run MEG client application when executed directly
 if __name__ == '__main__':

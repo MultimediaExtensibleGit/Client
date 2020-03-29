@@ -7,7 +7,6 @@ a = Analysis(['src/main.py'],
              pathex=['.'],
              binaries=[],
              datas=[
-               ('./src/runtime/meg_runtime', 'runtime/meg_runtime'),
                ('./src/meg.kv', '.')
              ],
              hiddenimports=['pip', 'pkg_resources.py2_warn', 'pygit2'],
