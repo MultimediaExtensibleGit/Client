@@ -9,11 +9,8 @@ pytest = "*"
 
 [packages]
 kivy = "*"
-"kivy-deps.glew" = "*"
-"kivy-deps.sdl2" = "*"
 pillow = "*"
 pygit2 = "*"
 pyinstaller = "*"
-pypiwin32 = { version = "*", os_name = "== 'nt'" }
 python-dateutil = "*"
 requests = "*"
