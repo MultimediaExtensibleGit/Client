@@ -9,5 +9,7 @@ pytest = "*"
 
 [packages]
 pyinstaller = "*"
-pypiwin32 = { version = "*", os_name = "== 'nt'" }
 meg-runtime = "*"
+
+[pipenv]
+allow_prereleases = true
