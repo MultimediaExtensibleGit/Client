@@ -3,32 +3,14 @@
 Git client for multimedia tasks and activities
 """
 
-# SDL2 image processing seems to fail so use PIL
-import os
-if 'KIVY_IMAGE' not in os.environ:
-    os.environ['KIVY_IMAGE'] = 'pil'
-# Disable Kivy configuration files
-if 'KIVY_NO_CONFIG' not in os.environ:
-    os.environ['KIVY_NO_CONFIG'] = '1'
-# Disable Kivy log files
-if 'KIVY_NO_FILELOG' not in os.environ:
-    os.environ['KIVY_NO_FILELOG'] = '1'
-
-# Import Kivy and set the minimum required version
-import kivy
-kivy.require('1.11.0')
-
-# Import Kivy app
-from kivy.app import App
-from kivy.logger import Logger
-from kivy.uix.label import Label
+import sys
 
 # Import MEG runtime
-from meg_runtime import Config, PluginManager, UIManager
+from meg_runtime import Config, PluginManager, UIManager, Logger
 
 
 # MEG client application
-class MEGApp(App):
+class MEGApp(object):
     """Multimedia Extensible Git (MEG) Client Application"""
 
     # Constructor
@@ -36,8 +18,6 @@ class MEGApp(App):
         """Application constructor"""
         # Initialize super class constructor
         super().__init__()
-        # Do not allow user to change Kivy settings
-        self.use_kivy_settings = False
         # Log debug information about home directory
         Logger.debug('MEG: Home <' + Config.get('path/home') + '>')
         # Load configuration
@@ -60,13 +40,11 @@ class MEGApp(App):
         """On application stopped"""
         PluginManager.unload_all()
 
-    # Build the application UI
-    def build(self):
+    # Run the application
+    def run(self):
         """Build the application UI"""
-        # Set the application title
-        self.title = 'Multimedia Extensible Git'
-        # Build the UI
-        return UIManager.get_instance()
+        # Run the UI
+        UIManager.run()
 
 
 # Run MEG client application when executed directly
