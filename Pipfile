@@ -8,9 +8,8 @@ flake8 = "*"
 pytest = "*"
 
 [packages]
-kivy = "*"
-pillow = "*"
-pygit2 = "*"
 pyinstaller = "*"
-python-dateutil = "*"
-requests = "*"
+meg-runtime = "*"
+
+[pipenv]
+allow_prereleases = true

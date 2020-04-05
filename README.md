@@ -16,16 +16,12 @@
 
   `pipenv sync --dev`
 
-* Update the runtime submodule:
-
-  `git submodule update --init src/runtime`
-
 ## Build
 
-* Build single executable binary
+* Build single executable binary:
 
   `pipenv run pyinstaller meg.spec`
 
-* Build a debug executable folder
+* Build a debug executable folder:
 
   `pipenv run pyinstaller meg-debug.spec`
