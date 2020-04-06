@@ -3,32 +3,15 @@
 Git client for multimedia tasks and activities
 """
 
-# SDL2 image processing seems to fail so use PIL
-import os
-if 'KIVY_IMAGE' not in os.environ:
-    os.environ['KIVY_IMAGE'] = 'pil'
-# Disable Kivy configuration files
-if 'KIVY_NO_CONFIG' not in os.environ:
-    os.environ['KIVY_NO_CONFIG'] = '1'
-# Disable Kivy log files
-if 'KIVY_NO_FILELOG' not in os.environ:
-    os.environ['KIVY_NO_FILELOG'] = '1'
-
-# Import Kivy and set the minimum required version
-import kivy
-kivy.require('1.11.0')
-
-# Import Kivy app
-from kivy.app import App
-from kivy.logger import Logger
-from kivy.uix.label import Label
+import sys
 
 # Import MEG runtime
-from meg_runtime import Config, PluginManager
+from meg_runtime import Config, PluginManager, ui_run
+from meg_runtime.logger import Logger
 
 
 # MEG client application
-class MEGApp(App):
+class MEGApp(object):
     """Multimedia Extensible Git (MEG) Client Application"""
 
     # Constructor
@@ -36,8 +19,6 @@ class MEGApp(App):
         """Application constructor"""
         # Initialize super class constructor
         super().__init__()
-        # Do not allow user to change Kivy settings
-        self.use_kivy_settings = False
         # Log debug information about home directory
         Logger.debug('MEG: Home <' + Config.get('path/home') + '>')
         # Load configuration
@@ -50,23 +31,18 @@ class MEGApp(App):
         # Load enabled plugins
         PluginManager.load_enabled()
 
-    # On application started
-    def on_start(self):
-        """On application started"""
-        pass
-
     # On application stopped
     def on_stop(self):
         """On application stopped"""
         PluginManager.unload_all()
 
-    # Build the application UI
-    def build(self):
-        """Build the application UI"""
-        # Set the application title
-        self.title = 'Multimedia Extensible Git'
-        # Build the UI
-        return Label(text='Multimedia Extensible Git')
+    # Run the application
+    def run(self):
+        """Run the application UI"""
+        # Launch the UI
+        ret = ui_run()
+        self.on_stop()
+        sys.exit(ret)
 
 
 # Run MEG client application when executed directly
