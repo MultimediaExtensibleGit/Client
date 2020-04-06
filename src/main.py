@@ -6,7 +6,8 @@ Git client for multimedia tasks and activities
 import sys
 
 # Import MEG runtime
-from meg_runtime import Config, PluginManager, UIManager, Logger
+from meg_runtime import Config, PluginManager, ui_run
+from meg_runtime.logger import Logger
 
 
 # MEG client application
@@ -30,11 +31,6 @@ class MEGApp(object):
         # Load enabled plugins
         PluginManager.load_enabled()
 
-    # On application started
-    def on_start(self):
-        """On application started"""
-        pass
-
     # On application stopped
     def on_stop(self):
         """On application stopped"""
@@ -42,9 +38,11 @@ class MEGApp(object):
 
     # Run the application
     def run(self):
-        """Build the application UI"""
-        # Run the UI
-        UIManager.run()
+        """Run the application UI"""
+        # Launch the UI
+        ret = ui_run()
+        self.on_stop()
+        sys.exit(ret)
 
 
 # Run MEG client application when executed directly
