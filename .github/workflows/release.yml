@@ -23,8 +23,6 @@ jobs:
         pipenv sync
     - name: Build release ${{ github.event.release.tag_name }}
       shell: cmd
-      env:
-        KIVY_GL_BACKEND: mock
       run: |
         pipenv run pyinstaller --clean --noconfirm meg.spec
     - name: Prepare release ${{ github.event.release.tag_name }}

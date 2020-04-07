@@ -2,14 +2,21 @@
 
 block_cipher = None
 
+import os
+import importlib
+
+package_imports = [['meg_runtime', ['ui/*.ui']]]
+
+datas = []
+for package, files in package_imports:
+    proot = os.path.dirname(importlib.import_module(package).__file__)
+    datas.extend((os.path.join(proot, f), os.path.join(package, os.path.dirname(f))) for f in files)
 
 a = Analysis(['src/main.py'],
              pathex=['.'],
              binaries=[],
-             datas=[
-               ('./src/meg.kv', '.')
-             ],
-             hiddenimports=['pip', 'pkg_resources.py2_warn', 'pygit2'],
+             datas=datas,
+             hiddenimports=['pip', 'pkg_resources.py2_warn', 'pygit2', 'meg_runtime'],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],

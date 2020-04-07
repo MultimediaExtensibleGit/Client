@@ -25,7 +25,5 @@ jobs:
         pipenv sync
     - name: Build
       shell: cmd
-      env:
-        KIVY_GL_BACKEND: mock
       run: |
         pipenv run pyinstaller --clean --noconfirm meg.spec
