@@ -5,7 +5,7 @@ block_cipher = None
 import os
 import importlib
 
-package_imports = [['meg_runtime', ['ui/*.ui']]]
+package_imports = [['meg_runtime', ['ui/*.ui', 'ui/images/*.svg']]]
 
 datas = []
 for package, files in package_imports:
