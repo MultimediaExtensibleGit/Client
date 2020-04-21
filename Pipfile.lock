@@ -90,11 +90,11 @@
         },
         "meg-runtime": {
             "hashes": [
-                "sha256:b90dd2581097c034127f5719e028214bc7c57243a531a051d8601f0d3e4fd31a",
-                "sha256:c9516298ed8fd5238410608fea2205c0b1da140d49f28db497ec2e14023be43e"
+                "sha256:188719bfbcc7de1b9078185b2103fce4c419d41c1ee282cb00daf755da8af2e4",
+                "sha256:fa681305a5742cdb35478a178288aafa6a0bad805e1c6dfb12d524a665693451"
             ],
             "index": "pypi",
-            "version": "==0.0.12"
+            "version": "==0.0.13"
         },
         "pefile": {
             "hashes": [
@@ -193,6 +193,16 @@
             ],
             "version": "==12.7.2"
         },
+        "pyqtwebengine": {
+            "hashes": [
+                "sha256:01cd7f38ba4efa5f4c0983219ab15dad7747a0ca9378c7832a3077a53988f5ea",
+                "sha256:37c4a820c5bcc82a6cb43ad33b8c81eee4c4772fc03e180a8fa37a59f99f6a48",
+                "sha256:3d0cba04f64d4f66087cc92e254ff8b33ec4a4e6c7751417fe2bd53c3ed740a7",
+                "sha256:85e1fac1b2c9bebf0b2e8cd9a75c14a38aad75165a8d8bcb8f6318944b779b25",
+                "sha256:e11595051f8bfbfa49175d899b2c8c2eea3a3deac4141edf4db68c3555221c92"
+            ],
+            "version": "==5.14.0"
+        },
         "python-dateutil": {
             "hashes": [
                 "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c",
@@ -215,6 +225,7 @@
                 "sha256:f27cec5e7f588c3d1051651830ecc00294f90728d19c3bf6916e6dba93ea357c",
                 "sha256:f4c5be1a293bae0076d93c88f37ee8da68136744588bc5e2be2f299a34ceb7aa"
             ],
+            "markers": "os_name == 'nt'",
             "version": "==227"
         },
         "pywin32-ctypes": {
