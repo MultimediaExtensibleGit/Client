@@ -90,11 +90,11 @@
         },
         "meg-runtime": {
             "hashes": [
-                "sha256:350b22ef5f58367f39a5fdb3d1804e81e589fa6fb0b2a2ad061e18ec38f1e5ad",
-                "sha256:69d9853c46326f6649673b4f9d046de89ffa1a1d2a6bf9d1707ad64a64bf5976"
+                "sha256:05cdbac6d356e8035452d9eaadbd6ba38b317b6d06a7fff96e54ff668a956615",
+                "sha256:20cdd2195e138515b3f4effdf465fc95fa99ab723614eeb33fdaef1e05c1a99c"
             ],
             "index": "pypi",
-            "version": "==0.0.15"
+            "version": "==0.0.16"
         },
         "pefile": {
             "hashes": [
